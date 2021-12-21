@@ -15,12 +15,14 @@ use App\Http\Controllers\InternetProtocolController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['auth:sanctum'])->group(function() {
+
+    // Internet Protocol Routes
+    Route::get('ip', [InternetProtocolController::class, 'index']);
+    Route::get('ip/{id}/fetch', [InternetProtocolController::class, 'fetch']);
+    Route::post('ip/add', [InternetProtocolController::class, 'add']);
+    Route::post('ip/{id}/update', [InternetProtocolController::class, 'update']);
 });
 
-Route::get('ip', [InternetProtocolController::class, 'index']);
-Route::get('ip/{id}/fetch', [InternetProtocolController::class, 'fetch']);
-Route::post('ip/add', [InternetProtocolController::class, 'add']);
-Route::post('ip/{id}/update', [InternetProtocolController::class, 'update']);
+
 
