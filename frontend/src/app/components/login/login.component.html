@@ -12,7 +12,9 @@
                 <form [formGroup]="form" (ngSubmit)="submitForm()" autocomplete="off">
                     <!-- Email Input -->
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email" name="email" />
+                        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email" name="email"
+                          [email]="true"
+                        />
                     </div>
                     <!-- Password Input -->
                     <div class="form-group">
