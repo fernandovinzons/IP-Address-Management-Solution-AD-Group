@@ -33,7 +33,7 @@ class InternetProtocolController extends Controller
             // No checker as it was not specified if duplicate ip is needed to be checked
 
             $request->validate([
-                'name' => 'required|max:13|ip',
+                'name' => 'required|ip',
                 'description' => 'required|max:255'
             ]);
 
@@ -60,7 +60,7 @@ class InternetProtocolController extends Controller
 
         if($ip){
             $ip->description = $request->description;
-            $ip->update();
+            $ip->save();
 
             return response()->json(['message' => 'IP Address Label Updated Successfully'], 200);
         }
