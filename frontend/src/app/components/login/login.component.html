@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-5">
+
+                <div class="text-center">
+                    <h2>IP Management System</h2>
+                </div>
+
+                <p style="color: lightslategray; text-align: center;">Please enter your login details</p>
+
+                <form [formGroup]="form" (ngSubmit)="submitForm()" autocomplete="off">
+                    <!-- Email Input -->
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email" name="email" />
+                    </div>
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password" name="password" />
+                    </div>
+
+                    <!-- Login Button -->
+                    <input type="submit" class="btn btn-primary w-100" value="Login" name="">
+                </form>
+
+            </div> <!-- End card-body -->
+
+        </div> <!-- End card my-auto -->
+
+    </div> <!-- End row -->
+
+</div> <!-- End container -->
