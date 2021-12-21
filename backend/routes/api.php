@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InternetProtocolController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Http\Controllers\InternetProtocolController;
 |
 */
 
+Route::post('login', [LoginController::class, 'login']);
+
 Route::middleware(['auth:sanctum'])->group(function() {
 
     // Internet Protocol Routes
@@ -22,6 +25,9 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::get('ip/{id}/fetch', [InternetProtocolController::class, 'fetch']);
     Route::post('ip/add', [InternetProtocolController::class, 'add']);
     Route::post('ip/{id}/update', [InternetProtocolController::class, 'update']);
+
+    // Login Controller Route
+    Route::post('logout', [LoginController::class, 'logout']);
 });
 
 
