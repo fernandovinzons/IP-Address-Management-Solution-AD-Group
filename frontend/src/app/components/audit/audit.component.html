@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+      <!-- Audit History -->
+      <div class="card my-auto shadow col-md-12 ip-list">
+          <div class="card-body h-100">
+              <p style="color: lightslategray; text-align: center;">Audit History</p>
+
+              <table *ngIf="audit_list.length > 0" class="table table-striped" >
+                  <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Triggered By</th>
+                        <th scope="col">Auditable ID</th>
+                        <th scope="col">Auditable Type</th>
+                        <th scope="col">Event</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">IP Address</th>
+                        <th scope="col">User Agent</th>
+                        <th scope="col">Created at</th>
+                        <th scope="col">Update At</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let ip of audit_list; index as i">
+                        <th scope="row">{{ ip.id }}</th>
+                        <td>{{ ip.user_id }}</td>
+                        <td>{{ ip.auditable_id }}</td>
+                        <td>{{ ip.auditable_type }}</td>
+                        <td>{{ ip.event }}</td>
+                        <td>{{ ip.url }}</td>
+                        <td>{{ ip.ip_address }}</td>
+                        <td>{{ ip.user_agent }}</td>
+                        <td>{{ ip.created_at }}</td>
+                        <td>{{ ip.updated_at }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+
+          </div> <!-- End card-body -->
+
+      </div> <!-- End card my-auto -->
+
+  </div> <!-- End row -->
+
+</div> <!-- End container -->

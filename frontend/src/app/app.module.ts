@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { InternetProtocolComponent } from './components/internet-protocol/internet-protocol.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AuditComponent } from './components/audit/audit.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     InternetProtocolComponent,
     HeaderComponent,
+    AuditComponent,
   ],
   imports: [
     BrowserModule,
