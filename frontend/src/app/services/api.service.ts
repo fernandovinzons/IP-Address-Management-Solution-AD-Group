@@ -29,6 +29,10 @@ export class ApiService {
     return this.http.post(this.baseAPIUrl + this.ipPath + this.actions.ADD, { name, description }, { headers : headers });
   }
 
+  updateIP(description: string, id: string, headers: any): Observable<any>{
+    return this.http.post(this.baseAPIUrl + this.ipPath + "/" + id + this.actions.UPDATE, { description }, { headers : headers });
+  }
+
   getIPList(headers: any): Observable<InternetProtocolModel[]> {
     return this.http.get<InternetProtocolModel[]>(this.baseAPIUrl + this.ipPath, { headers : headers });
   }
