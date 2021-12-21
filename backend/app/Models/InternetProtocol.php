@@ -9,7 +9,7 @@ class InternetProtocol extends Model
 {
     use HasFactory;
 
-    protected $table = 'internet_protocol';
+    protected $table = 'internet_protocols';
     protected $fillable = ['name', 'description'];
 
 }

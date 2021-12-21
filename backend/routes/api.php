@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InternetProtocolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('ip', [InternetProtocolController::class, 'index']);
+Route::get('ip/{id}/fetch', [InternetProtocolController::class, 'fetch']);
+Route::post('ip/add', [InternetProtocolController::class, 'add']);
+Route::post('ip/{id}/update', [InternetProtocolController::class, 'update']);
+
