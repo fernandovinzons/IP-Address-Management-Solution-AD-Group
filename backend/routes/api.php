@@ -15,19 +15,19 @@ use App\Http\Controllers\LoginController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::post('login', [LoginController::class, 'login']);
+// Login Route
+Route::post('login', [LoginController::class, 'login'])->middleware("cors");;
 
 Route::middleware(['auth:sanctum'])->group(function() {
 
     // Internet Protocol Routes
-    Route::get('ip', [InternetProtocolController::class, 'index']);
-    Route::get('ip/{id}/fetch', [InternetProtocolController::class, 'fetch']);
-    Route::post('ip/add', [InternetProtocolController::class, 'add']);
-    Route::post('ip/{id}/update', [InternetProtocolController::class, 'update']);
+    Route::get('ip', [InternetProtocolController::class, 'index'])->middleware("cors");;
+    Route::get('ip/{id}/fetch', [InternetProtocolController::class, 'fetch'])->middleware("cors");;
+    Route::post('ip/add', [InternetProtocolController::class, 'add'])->middleware("cors");;
+    Route::post('ip/{id}/update', [InternetProtocolController::class, 'update'])->middleware("cors");;
 
     // Login Controller Route
-    Route::post('logout', [LoginController::class, 'logout']);
+    Route::post('logout', [LoginController::class, 'logout'])->middleware("cors");;
 });
 
 
