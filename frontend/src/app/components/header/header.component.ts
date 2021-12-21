@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,15 +9,22 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isLoggedIn$!: Observable<any>;
+  public get token() : string | null {
+    const token = localStorage.getItem('ipms_auth');
+    return token;
+  }
 
   constructor(
-    private auth: AuthService
+    private router: Router
+
   ) { }
 
   ngOnInit(): void {
-    this.isLoggedIn$ = this.auth.isLoggedIn$;
   }
 
+  logout(){
+      localStorage.removeItem('ipms_auth');
+      this.router.navigate(['login']);
+  }
 
 }

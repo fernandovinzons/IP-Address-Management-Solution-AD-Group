@@ -9,8 +9,8 @@
       </li>
     </ul>
     <span class="navbar-text">
-      <a *ngIf="!isLoggedIn$" class="nav-link" href="#">Login</a>
-      <a *ngIf="isLoggedIn$" class="nav-link" href="#">Logout</a>
+      <a *ngIf="!token" class="nav-link" href="login">Login</a>
+      <a *ngIf="token" (click)="logout()" class="nav-link" href="#">Logout</a>
     </span>
   </div>
 </nav>
