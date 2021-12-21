@@ -1,1 +1,61 @@
-<p>internet-protocol works!</p>
+<div class="container">
+  <div class="row">
+      <div class="card my-auto shadow col-md-5">
+          <div class="card-body">
+              <div class="text-center">
+                  <h2>Add IP Address</h2>
+              </div>
+
+              <p style="color: lightslategray; text-align: center;">Please enter your login details</p>
+
+              <form [formGroup]="form" (ngSubmit)="submitForm()" autocomplete="off">
+                  <!-- Email Input -->
+                  <div class="form-group">
+                      <label for="ipaddress">IP Address</label>
+                      <input type="ipaddress" id="ipaddress" placeholder="IP Address" class="form-control" formControlName="ipaddress" name="ipaddress"/>
+                  </div>
+                  <!-- Password Input -->
+                  <div class="form-group">
+                      <label for="description">Description/Label</label>
+                      <input type="description" id="description" placeholder="Description/Label" class="form-control" formControlName="description" name="description" />
+                  </div>
+
+                  <!-- Login Button -->
+                  <input type="submit" class="btn btn-primary w-100" value="Add" name="">
+              </form>
+
+          </div> <!-- End card-body -->
+      </div> <!-- End card my-auto -->
+
+
+      <!-- List of IP Address -->
+      <div class="card my-auto shadow col-md-7 ip-list">
+          <div class="card-body h-100">
+              <p style="color: lightslategray; text-align: center;">List of IP Address</p>
+
+              <table *ngIf="ip_list.length > 0" class="table table-striped" >
+                  <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">IP Address</th>
+                        <th scope="col">Description / Label</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let ip of ip_list; index as i">
+                        <th scope="row">{{ ip.id }}</th>
+                        <td>{{ ip.name }} </td>
+                        <td>{{ ip.description }}</td>
+                        <td></td>
+                      </tr>
+                  </tbody>
+              </table>
+
+          </div> <!-- End card-body -->
+
+      </div> <!-- End card my-auto -->
+
+  </div> <!-- End row -->
+
+</div> <!-- End container -->

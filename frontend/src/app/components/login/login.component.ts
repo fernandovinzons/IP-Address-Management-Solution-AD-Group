@@ -26,8 +26,7 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) { return; }
 
 
-    this.authService
-    .login(this.form.get('email')?.value, this.form.get('password')?.value)
+    this.authService.login(this.form.get('email')?.value, this.form.get('password')?.value)
     .subscribe((response) => {
       this.router.navigate(['/internet-protocol']);
     });

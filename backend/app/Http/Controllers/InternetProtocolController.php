@@ -11,7 +11,7 @@ class InternetProtocolController extends Controller
     // Fetch All IP Address
     public function index(){
         $ip_list = InternetProtocol::all();
-        return response()->json(['ip_list' => $ip_list], 200);
+        return response()->json($ip_list, 200);
     }
 
     // Fetch Specific IP Address

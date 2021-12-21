@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 // Components
 import { LoginComponent } from './components/login/login.component';
 import { InternetProtocolComponent } from './components/internet-protocol/internet-protocol.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InternetProtocolComponent
+    InternetProtocolComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
