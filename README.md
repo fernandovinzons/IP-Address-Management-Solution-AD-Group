@@ -6,7 +6,7 @@ Installation and Usage instructions
 
 * For Backend
 1. Open a git bash / powershell terminal and cd to "backend" directory.
-2. On "backend" directory, open and edit the ".env" file to specify the db connection env.
+2. On "backend" directory, open/create and edit the ".env" file to specify the db connection env.
 
     ex. 
         
@@ -22,7 +22,8 @@ Installation and Usage instructions
         
         DB_PASSWORD=
         
- 
+    Also add "AUDITING_ENABLED=true" to the .env file.
+    
  3. after that run "composer install" (needs composer to be installed) to download dependencies.
  4. then run "php artisan migrate" to migrate all the needed tables to the db provided to env file.
  5. then run "php artisan serve" and it would serve it on your local (ex. http://127.0.0.1:8000)
