@@ -40,6 +40,7 @@ To access the site, please go to "http://localhost:4200/"
 - I have not added a register or any account management for this.
 - To add a user, please use the ff. commands :
   
+  On backend directory 
   run "php artisan tinker" and type "DB::table('users')->insert(['name'=>'test_name','email'=>'test@myemail.com','password'=>Hash::make('123456')])"
   
   If you run this command, you should be able to login using
